@@ -10,11 +10,22 @@
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+
+
 
 		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 		<script src="assets/js/ace-extra.min.js"></script>
+
+		<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/pie.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/animate/animate.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 	</head>
 
 	<body class="no-skin">
@@ -348,19 +359,6 @@
 					try{ace.settings.loadState('sidebar')}catch(e){}
 				</script>
 
-				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
-
-					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-						<span class="btn btn-success"></span>
-
-						<span class="btn btn-info"></span>
-
-						<span class="btn btn-warning"></span>
-
-						<span class="btn btn-danger"></span>
-					</div>
-				</div><!-- /.sidebar-shortcuts -->
-
 				<ul class="nav nav-list">
 					<li class="active">
 						<a href="index.html">
@@ -489,6 +487,14 @@
 						<b class="arrow"></b>
 
 						<ul class="submenu">
+							<li class="">
+								<a href="settings.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Settings
+								</a>
+
+								<b class="arrow"></b>
+							</li>
 							<li class="">
 								<a href="profile.html">
 									<i class="menu-icon fa fa-caret-right"></i>
@@ -619,67 +625,78 @@
 								<!-- PAGE CONTENT BEGINS -->
 
 								<div class="row">
+									<div class="col-sm-12 infobox-container">
+
+										<div class="infobox infobox-blue2" style="height:100px; width:400px;">
+											<div class="infobox-progress">
+												<div class="easy-pie-chart percentage" data-percent="100" data-size="90">
+													<span class="percent">2.5B</span>
+												</div>
+											</div>
+
+
+											<div class="infobox-data" style="float:right;">
+												<span class="infobox-text">Target Collection</span>
+
+												<div class="infobox-content">
+													<span class="bigger-110">~</span>
+													2017/2018
+												</div>
+											</div>
+										</div>
+
+										<div class="infobox infobox-green" style="height:100px; width:400px;">
+											<div class="infobox-progress">
+												<div class="easy-pie-chart percentage" data-percent="30" data-size="90">
+													<span class="percent">20</span>M
+												</div>
+											</div>
+
+											<div class="infobox-data" style="float:right;">
+												<div class="infobox-content">Yearly Collection</div>
+												<div class="infobox-content">Year-to-date</div>
+											</div>
+										</div>
+
+										<div class="infobox infobox-red" style="height:100px; width:400px;">
+											<div class="infobox-progress">
+												<div class="easy-pie-chart percentage" data-percent="20" data-size="90">
+													<span class="percent">10</span>M
+												</div>
+											</div>
+
+											<div class="infobox-data" style="float:right;">
+												<div class="infobox-content">	Monthly Collection</div>
+												<div class="infobox-content">~ January 2018</div>
+											</div>
+										</div>
+
+										<div class="infobox infobox-purple " style="height:100px; width:400px; font-size:30%:">
+											<div class="infobox-progress">
+												<div class="easy-pie-chart percentage" data-percent="4" data-size="90">
+													<span class="percent">4</span>M
+												</div>
+											</div>
+											<div class="vspace-12-sm"></div>
+
+											<div class="infobox-data" style="float:right;">
+												<div class="infobox-content">Daily Collection</div>
+												<div class="infobox-content">~Monday</div>
+											</div>
+										</div>
+
+									</div>
 								</div>
 
 									<div class="vspace-12-sm"></div>
                <div class="row">
-									<div class="col-sm-8">
+
 										<div class="widget-box">
 											<div class="widget-header widget-header-flat widget-header">
 												<h5 class="widget-title">
 													<i class="ace-icon fa fa-signal"></i>
 													Revenue Statistics
 												</h5>
-
-												<div class="widget-toolbar no-border">
-													<div class="inline dropdown-hover">
-														<button class="btn btn-minier btn-primary">
-															This Year
-															<i class="ace-icon fa fa-angle-down icon-on-right bigger-110"></i>
-														</button>
-
-														<ul class="dropdown-menu dropdown-menu-right dropdown-125 dropdown-lighter dropdown-close dropdown-caret">
-															<li class="active">
-																<a href="#" class="blue">
-																	<i class="ace-icon fa fa-caret-right bigger-110">&nbsp;</i>
-																	This Year
-																</a>
-															</li>
-
-															<li>
-																<a href="#">
-																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
-																	Last Year
-																</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-
-												<div class="widget-toolbar no-border">
-													<div class="inline dropdown-hover">
-														<button class="btn btn-minier btn-primary">
-															This Week
-															<i class="ace-icon fa fa-angle-down icon-on-right bigger-110"></i>
-														</button>
-
-														<ul class="dropdown-menu dropdown-menu-right dropdown-125 dropdown-lighter dropdown-close dropdown-caret">
-															<li class="active">
-																<a href="#" class="blue">
-																	<i class="ace-icon fa fa-caret-right bigger-110">&nbsp;</i>
-																	This Week
-																</a>
-															</li>
-
-															<li>
-																<a href="#">
-																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
-																	Last Week
-																</a>
-															</li>
-														</ul>
-													</div>
-												</div>
 												<div class="widget-toolbar no-border">
 													<div class="inline dropdown-hover">
 														<button class="btn btn-minier btn-primary">
@@ -698,14 +715,21 @@
 															<li>
 																<a href="#">
 																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
-																	Yesterday
+																	This Week
 																</a>
 															</li>
 
 															<li>
 																<a href="#">
 																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
-																	Previous day
+																	This Month
+																</a>
+															</li>
+
+															<li>
+																<a href="#">
+																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
+																	This Year
 																</a>
 															</li>
 														</ul>
@@ -715,7 +739,12 @@
 
 											<div class="widget-body">
 												<div class="widget-main">
-													<div id="piechart-placeholder" style="height:400px;"></div>
+													<div class="col-sm-7">
+													<div id="chartdiv"></div>
+												</div>
+												<div class="col-sm-5 infobox-container">
+														<div id="chartdiv1"></div>
+												</div>
 
 													<div class="hr hr8 hr-double"></div>
 
@@ -753,68 +782,9 @@
 												</div><!-- /.widget-main -->
 											</div><!-- /.widget-body -->
 										</div><!-- /.widget-box -->
-									</div><!-- /.col -->
-
-									<div class="col-sm-4 infobox-container">
-
-										<div class="infobox infobox-blue2" style="height:100px; width:500px;">
-											<div class="infobox-progress">
-												<div class="easy-pie-chart percentage" data-percent="100" data-size="90">
-													<span class="percent">2.5B</span>
-												</div>
-											</div>
 
 
-											<div class="infobox-data" style="float:right;">
-												<span class="infobox-text">Target Collection</span>
 
-												<div class="infobox-content">
-													<span class="bigger-110">~</span>
-													2017/2018
-												</div>
-											</div>
-										</div>
-
-										<div class="infobox infobox-green" style="height:100px; width:500px;">
-											<div class="infobox-progress">
-												<div class="easy-pie-chart percentage" data-percent="30" data-size="90">
-													<span class="percent">20</span>M
-												</div>
-											</div>
-
-											<div class="infobox-data" style="float:right;">
-												<div class="infobox-content">Yearly Collection</div>
-												<div class="infobox-content">Year-to-date</div>
-											</div>
-										</div>
-
-										<div class="infobox infobox-red" style="height:100px; width:500px;">
-											<div class="infobox-progress">
-												<div class="easy-pie-chart percentage" data-percent="20" data-size="90">
-													<span class="percent">10</span>M
-												</div>
-											</div>
-
-											<div class="infobox-data" style="float:right;">
-												<div class="infobox-content">	Monthly Collection</div>
-												<div class="infobox-content">~ January 2018</div>
-											</div>
-										</div>
-
-										<div class="infobox infobox-purple " style="height:100px; width:500px; font-size:30%:">
-											<div class="infobox-progress">
-												<div class="easy-pie-chart percentage" data-percent="4" data-size="90">
-													<span class="percent">4</span>M
-												</div>
-											</div>
-
-											<div class="infobox-data" style="float:right;">
-												<div class="infobox-content">Daily Collection</div>
-												<div class="infobox-content">~Monday</div>
-											</div>
-										</div>
-
-									</div>
 								</div><!-- /.row -->
 
 								<div class="hr hr32 hr-dotted"></div>
@@ -1622,45 +1592,320 @@
 			  //but sometimes it brings up errors with normal resize event handlers
 			  $.resize.throttleWindow = false;
 
-			  var placeholder = $('#piechart-placeholder').css({'width':'90%' , 'min-height':'150px'});
-			  var data = [
-				{ label: "Utilities",  data: 20, color: "#68BC31"},
-				{ label: "Rents",  data: 24.5, color: "#2091CF"},
-				{ label: "Parking Fee",  data: 8.2, color: "#AF4E96"},
-				{ label: "Tourism",  data: 18.6, color: "#DA5430"},
-				{ label: "Business Permits",  data: 10.6, color: "#6F3CC4;"},
-				{ label: "other",  data: 10, color: "#FEE074"}
-			  ]
-			  function drawPieChart(placeholder, data, position) {
-			 	  $.plot(placeholder, data, {
-					series: {
-						pie: {
-							show: true,
-							tilt:0.8,
-							highlight: {
-								opacity: 0.25
-							},
-							stroke: {
-								color: '#fff',
-								width: 2
-							},
-							startAngle: 4
-						}
-					},
-					legend: {
-						show: true,
-						position: position || "ne",
-						labelBoxBorderColor: null,
-						margin:[-30,15]
-					}
-					,
-					grid: {
-						hoverable: true,
-						clickable: true
-					}
-				 })
-			 }
-			 drawPieChart(placeholder, data);
+	var chart = AmCharts.makeChart("chartdiv1", {
+  "type": "serial",
+  "theme": "light",
+  "marginRight": 70,
+  "dataProvider": [{
+    "revenue": "Utilities",
+    "amount": 3025,
+    "color": "#FF0F00"
+  }, {
+    "revenue": "Rents",
+    "amount": 1882,
+    "color": "#FF6600"
+  }, {
+    "revenue": "Parking",
+    "amount": 1809,
+    "color": "#FF9E01"
+  }, {
+    "revenue": "Permits",
+    "amount": 1322,
+    "color": "#FCD202"
+  }, {
+    "revenue": "Land Rates",
+    "amount": 1122,
+    "color": "#F8FF01"
+  }, {
+    "revenue": "Tourism",
+    "amount": 1114,
+    "color": "#B0DE09"
+  }, {
+    "revenue": "Others",
+    "amount": 984,
+    "color": "#04D215"
+  }],
+  "valueAxes": [{
+    "axisAlpha": 0,
+    "position": "left",
+    "title": "Revenue Collected"
+  }],
+  "startDuration": 1,
+  "graphs": [{
+    "balloonText": "<b>[[category]]: [[value]]</b>",
+    "fillColorsField": "color",
+    "fillAlphas": 0.9,
+    "lineAlpha": 0.2,
+    "type": "column",
+    "valueField": "amount"
+  }],
+  "chartCursor": {
+    "categoryBalloonEnabled": false,
+    "cursorAlpha": 0,
+    "zoomable": false
+  },
+  "categoryField": "revenue",
+  "categoryAxis": {
+    "gridPosition": "start",
+    "labelRotation": 45
+  },
+  "export": {
+    "enabled": true
+  }
+
+});
+
+
+/**
+ * Define data for each year
+ */
+var chartData = {
+  "1995": [
+    { "sector": "Agriculture", "size": 6.6 },
+    { "sector": "Mining and Quarrying", "size": 0.6 },
+    { "sector": "Manufacturing", "size": 23.2 },
+    { "sector": "Electricity and Water", "size": 2.2 },
+    { "sector": "Construction", "size": 4.5 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 14.6 },
+    { "sector": "Transport and Communication", "size": 9.3 },
+    { "sector": "Finance, real estate and business services", "size": 22.5 } ],
+  "1996": [
+    { "sector": "Agriculture", "size": 6.4 },
+    { "sector": "Mining and Quarrying", "size": 0.5 },
+    { "sector": "Manufacturing", "size": 22.4 },
+    { "sector": "Electricity and Water", "size": 2 },
+    { "sector": "Construction", "size": 4.2 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 14.8 },
+    { "sector": "Transport and Communication", "size": 9.7 },
+    { "sector": "Finance, real estate and business services", "size": 22 } ],
+  "1997": [
+    { "sector": "Agriculture", "size": 6.1 },
+    { "sector": "Mining and Quarrying", "size": 0.2 },
+    { "sector": "Manufacturing", "size": 20.9 },
+    { "sector": "Electricity and Water", "size": 1.8 },
+    { "sector": "Construction", "size": 4.2 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 13.7 },
+    { "sector": "Transport and Communication", "size": 9.4 },
+    { "sector": "Finance, real estate and business services", "size": 22.1 } ],
+  "1998": [
+    { "sector": "Agriculture", "size": 6.2 },
+    { "sector": "Mining and Quarrying", "size": 0.3 },
+    { "sector": "Manufacturing", "size": 21.4 },
+    { "sector": "Electricity and Water", "size": 1.9 },
+    { "sector": "Construction", "size": 4.2 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 14.5 },
+    { "sector": "Transport and Communication", "size": 10.6 },
+    { "sector": "Finance, real estate and business services", "size": 23 } ],
+  "1999": [
+    { "sector": "Agriculture", "size": 5.7 },
+    { "sector": "Mining and Quarrying", "size": 0.2 },
+    { "sector": "Manufacturing", "size": 20 },
+    { "sector": "Electricity and Water", "size": 1.8 },
+    { "sector": "Construction", "size": 4.4 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 15.2 },
+    { "sector": "Transport and Communication", "size": 10.5 },
+    { "sector": "Finance, real estate and business services", "size": 24.7 } ],
+  "2000": [
+    { "sector": "Agriculture", "size": 5.1 },
+    { "sector": "Mining and Quarrying", "size": 0.3 },
+    { "sector": "Manufacturing", "size": 20.4 },
+    { "sector": "Electricity and Water", "size": 1.7 },
+    { "sector": "Construction", "size": 4 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 16.3 },
+    { "sector": "Transport and Communication", "size": 10.7 },
+    { "sector": "Finance, real estate and business services", "size": 24.6 } ],
+  "2001": [
+    { "sector": "Agriculture", "size": 5.5 },
+    { "sector": "Mining and Quarrying", "size": 0.2 },
+    { "sector": "Manufacturing", "size": 20.3 },
+    { "sector": "Electricity and Water", "size": 1.6 },
+    { "sector": "Construction", "size": 3.1 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 16.3 },
+    { "sector": "Transport and Communication", "size": 10.7 },
+    { "sector": "Finance, real estate and business services", "size": 25.8 } ],
+  "2002": [
+    { "sector": "Agriculture", "size": 5.7 },
+    { "sector": "Mining and Quarrying", "size": 0.2 },
+    { "sector": "Manufacturing", "size": 20.5 },
+    { "sector": "Electricity and Water", "size": 1.6 },
+    { "sector": "Construction", "size": 3.6 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 16.1 },
+    { "sector": "Transport and Communication", "size": 10.7 },
+    { "sector": "Finance, real estate and business services", "size": 26 } ],
+  "2003": [
+    { "sector": "Agriculture", "size": 4.9 },
+    { "sector": "Mining and Quarrying", "size": 0.2 },
+    { "sector": "Manufacturing", "size": 19.4 },
+    { "sector": "Electricity and Water", "size": 1.5 },
+    { "sector": "Construction", "size": 3.3 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 16.2 },
+    { "sector": "Transport and Communication", "size": 11 },
+    { "sector": "Finance, real estate and business services", "size": 27.5 } ],
+  "2004": [
+    { "sector": "Agriculture", "size": 4.7 },
+    { "sector": "Mining and Quarrying", "size": 0.2 },
+    { "sector": "Manufacturing", "size": 18.4 },
+    { "sector": "Electricity and Water", "size": 1.4 },
+    { "sector": "Construction", "size": 3.3 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 16.9 },
+    { "sector": "Transport and Communication", "size": 10.6 },
+    { "sector": "Finance, real estate and business services", "size": 28.1 } ],
+  "2005": [
+    { "sector": "Agriculture", "size": 4.3 },
+    { "sector": "Mining and Quarrying", "size": 0.2 },
+    { "sector": "Manufacturing", "size": 18.1 },
+    { "sector": "Electricity and Water", "size": 1.4 },
+    { "sector": "Construction", "size": 3.9 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 15.7 },
+    { "sector": "Transport and Communication", "size": 10.6 },
+    { "sector": "Finance, real estate and business services", "size": 29.1 } ],
+  "2006": [
+    { "sector": "Agriculture", "size": 4 },
+    { "sector": "Mining and Quarrying", "size": 0.2 },
+    { "sector": "Manufacturing", "size": 16.5 },
+    { "sector": "Electricity and Water", "size": 1.3 },
+    { "sector": "Construction", "size": 3.7 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 14.2 },
+    { "sector": "Transport and Communication", "size": 12.1 },
+    { "sector": "Finance, real estate and business services", "size": 29.1 } ],
+  "2007": [
+    { "sector": "Agriculture", "size": 4.7 },
+    { "sector": "Mining and Quarrying", "size": 0.2 },
+    { "sector": "Manufacturing", "size": 16.2 },
+    { "sector": "Electricity and Water", "size": 1.2 },
+    { "sector": "Construction", "size": 4.1 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 15.6 },
+    { "sector": "Transport and Communication", "size": 11.2 },
+    { "sector": "Finance, real estate and business services", "size": 30.4 } ],
+  "2008": [
+    { "sector": "Agriculture", "size": 4.9 },
+    { "sector": "Mining and Quarrying", "size": 0.3 },
+    { "sector": "Manufacturing", "size": 17.2 },
+    { "sector": "Electricity and Water", "size": 1.4 },
+    { "sector": "Construction", "size": 5.1 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 15.4 },
+    { "sector": "Transport and Communication", "size": 11.1 },
+    { "sector": "Finance, real estate and business services", "size": 28.4 } ],
+  "2009": [
+    { "sector": "Agriculture", "size": 4.7 },
+    { "sector": "Mining and Quarrying", "size": 0.3 },
+    { "sector": "Manufacturing", "size": 16.4 },
+    { "sector": "Electricity and Water", "size": 1.9 },
+    { "sector": "Construction", "size": 4.9 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 15.5 },
+    { "sector": "Transport and Communication", "size": 10.9 },
+    { "sector": "Finance, real estate and business services", "size": 27.9 } ],
+  "2010": [
+    { "sector": "Agriculture", "size": 4.2 },
+    { "sector": "Mining and Quarrying", "size": 0.3 },
+    { "sector": "Manufacturing", "size": 16.2 },
+    { "sector": "Electricity and Water", "size": 2.2 },
+    { "sector": "Construction", "size": 4.3 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 15.7 },
+    { "sector": "Transport and Communication", "size": 10.2 },
+    { "sector": "Finance, real estate and business services", "size": 28.8 } ],
+  "2011": [
+    { "sector": "Agriculture", "size": 4.1 },
+    { "sector": "Mining and Quarrying", "size": 0.3 },
+    { "sector": "Manufacturing", "size": 14.9 },
+    { "sector": "Electricity and Water", "size": 2.3 },
+    { "sector": "Construction", "size": 5 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 17.3 },
+    { "sector": "Transport and Communication", "size": 10.2 },
+    { "sector": "Finance, real estate and business services", "size": 27.2 } ],
+  "2012": [
+    { "sector": "Agriculture", "size": 3.8 },
+    { "sector": "Mining and Quarrying", "size": 0.3 },
+    { "sector": "Manufacturing", "size": 14.9 },
+    { "sector": "Electricity and Water", "size": 2.6 },
+    { "sector": "Construction", "size": 5.1 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 15.8 },
+    { "sector": "Transport and Communication", "size": 10.7 },
+    { "sector": "Finance, real estate and business services", "size": 28 } ],
+  "2013": [
+    { "sector": "Agriculture", "size": 3.7 },
+    { "sector": "Mining and Quarrying", "size": 0.2 },
+    { "sector": "Manufacturing", "size": 14.9 },
+    { "sector": "Electricity and Water", "size": 2.7 },
+    { "sector": "Construction", "size": 5.7 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 16.5 },
+    { "sector": "Transport and Communication", "size": 10.5 },
+    { "sector": "Finance, real estate and business services", "size": 26.6 } ],
+  "2014": [
+    { "sector": "Agriculture", "size": 3.9 },
+    { "sector": "Mining and Quarrying", "size": 0.2 },
+    { "sector": "Manufacturing", "size": 14.5 },
+    { "sector": "Electricity and Water", "size": 2.7 },
+    { "sector": "Construction", "size": 5.6 },
+    { "sector": "Trade (Wholesale, Retail, Motor)", "size": 16.6 },
+    { "sector": "Transport and Communication", "size": 10.5 },
+    { "sector": "Finance, real estate and business services", "size": 26.5 } ]
+};
+
+
+/**
+ * Create the chart
+ */
+var currentYear = 1995;
+var chart = AmCharts.makeChart( "chartdiv", {
+  "type": "pie",
+  "theme": "light",
+  "dataProvider": [],
+  "valueField": "size",
+  "titleField": "sector",
+  "startDuration": 0,
+  "innerRadius": 80,
+  "pullOutRadius": 20,
+  "marginTop": 30,
+  "titles": [{
+    "text": "Revenue Statistics Over Years"
+  }],
+  "allLabels": [{
+    "y": "54%",
+    "align": "center",
+    "size": 25,
+    "bold": true,
+    "text": "1995",
+    "color": "#555"
+  }, {
+    "y": "49%",
+    "align": "center",
+    "size": 15,
+    "text": "Year",
+    "color": "#555"
+  }],
+  "listeners": [ {
+    "event": "init",
+    "method": function( e ) {
+      var chart = e.chart;
+
+      function getCurrentData() {
+        var data = chartData[currentYear];
+        currentYear++;
+        if (currentYear > 2014)
+          currentYear = 1995;
+        return data;
+      }
+
+      function loop() {
+        chart.allLabels[0].text = currentYear;
+        var data = getCurrentData();
+        chart.animateData( data, {
+          duration: 1000,
+          complete: function() {
+            setTimeout( loop, 3000 );
+          }
+        } );
+      }
+
+      loop();
+    }
+  } ],
+   "export": {
+   "enabled": true
+  }
+} );
+
 
 			 /**
 			 we saved the drawing function and the data to redraw with different position later when switching to RTL mode dynamically
